@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head><meta charset="UTF-8"><title>攻撃フォーム</title></head>
+<body>
+  <h1>攻撃フォーム</h1>
+  <form action="http://localhost:9999/store.php" method="post">
+    <input type="hidden" name="token" value="invalid_token"> <!-- 不正なトークン -->
+    <input type="hidden" name="id" value="1">
+    <input type="hidden" name="content" value="攻撃による書き換え">
+    <input type="submit" value="攻撃送信">
+  </form>
+</body>
+</html>

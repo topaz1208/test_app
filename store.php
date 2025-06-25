@@ -5,7 +5,5 @@ require_once('functions.php');
 // createData($_POST);
 
 // 追記
-// var_dump($_POST);
-// exit;
 savePostedData($_POST);
 header('Location: ./index.php');

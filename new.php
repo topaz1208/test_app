@@ -1,3 +1,10 @@
+<!-- SESSION　追記 -->
+<?php
+require_once('functions.php');
+setToken(); // 追記
+?>
+<!-- ここまで -->
+
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -5,18 +12,20 @@
   <title>新規作成</title>
 </head>
 <body>
+  <?php if (!empty($_SESSION['err'])): ?> 
+    <p><?= $_SESSION['err']; ?></p>
+  <?php endif; ?>
+
+<!-- SESSION　追記 -->
   <form action="store.php" method="post">
+    <input type="hidden" name="token" value="<?= $_SESSION['token']; ?>"> 
     <input type="text" name="content">
     <input type="submit" value="作成">
   </form>
-
-  <!-- <form action="store.php" method="post">
-  <input type="text" name="id" value="123">
-  <textarea name="content">焼肉</textarea>
-  <button type="submit">送信</button>
-  </form> -->
+<!-- ここまで -->
   <div>
     <a href="index.php">一覧へもどる</a>
   </div>
+   <?php unsetError(); ?>
 </body>
 </html>
